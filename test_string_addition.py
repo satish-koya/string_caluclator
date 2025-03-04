@@ -23,3 +23,9 @@ class TestStringMethods(unittest.TestCase):
        " //[delimiter]\n[numbers…]"
        self.assertEqual(string_addition("//;\n10;20;30;40;50"), 150)
        self.assertEqual(string_addition("//.\n10.20.30.40.50"), 150)
+
+    # Calling add with a negative number will throw an exception
+    def test_negative_number(self):
+        with self.assertRaises(NegativeNumberException) as context:
+            string_addition("10,-9")
+        self.assertEqual(str(context.exception), "negative numbers not allowed: -9")

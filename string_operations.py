@@ -1,3 +1,8 @@
+class NegativeNumberException(Exception):
+    """Custom exception for negative numbers."""
+    pass
+
+
 def string_addition(numbers_string):
     try:
         pass
