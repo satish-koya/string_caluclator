@@ -40,3 +40,20 @@ def string_with_newline_addition(number_string_with_newline):
         print("Exception strin_with_newline_addition :" + str(e))
         return None
     
+
+def string_with_delimeter(number_string_with_delinmeter):
+    try:
+        ## //[delimiter]\n[numbers…]
+        rgx_pattern = r'(?=.*\n)'
+        if re.search(rgx_pattern, number_string_with_delinmeter):
+            split_numbers = number_string_with_delinmeter.split("\n")
+            delimeter_part = split_numbers[0]
+            numbers_string=split_numbers[1]
+            delimeter = delimeter_part[-1]
+            convertion_string=numbers_string.replace(delimeter,',')
+            return string_addition(convertion_string)
+        else:
+            print("string should contain a newline ")
+    except Exception as e:
+        print("Exception strin_with_newline_addition :" + str(e))
+        return None

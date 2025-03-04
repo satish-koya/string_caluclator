@@ -21,8 +21,8 @@ class TestStringMethods(unittest.TestCase):
     #Support different delimiters
     def test_string_caluclator_witn_diff_delimiter(self):
        " //[delimiter]\n[numbers…]"
-       self.assertEqual(string_addition("//;\n10;20;30;40;50"), 150)
-       self.assertEqual(string_addition("//.\n10.20.30.40.50"), 150)
+       self.assertEqual(string_with_delimeter("//;\n10;20;30;40;50"), 150)
+       self.assertEqual(string_with_delimeter("//.\n10.20.30.40.50"), 150)
 
     # Calling add with a negative number will throw an exception
     def test_negative_number(self):
