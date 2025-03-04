@@ -10,7 +10,7 @@ class TestStringMethods(unittest.TestCase):
 
 
     ##Allow the add method to handle any amount of numbers.:
-    def test_string_caluclator(self):
+    def test_string_caluclator_multi(self):
         self.assertEqual(string_addition("10,9,20,30,40,50"), 159)
 
 
