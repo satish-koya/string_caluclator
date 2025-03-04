@@ -12,3 +12,8 @@ class TestStringMethods(unittest.TestCase):
     ##Allow the add method to handle any amount of numbers.:
     def test_string_caluclator(self):
         self.assertEqual(string_addition("10,9,20,30,40,50"), 159)
+
+
+    #Allow the add method to handle new lines between numbers (instead of commas). ("1\n2,3" should return 6)
+    def test_string_caluclator_witn_newline(self):
+        self.assertEqual(string_addition("10,20,30,40\n50"), 150)
