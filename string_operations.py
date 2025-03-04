@@ -7,11 +7,20 @@ def add_numbers(list_of_numbers):
     try:
         sum_of_numbers = 0
         if len(list_of_numbers) > 0:
+            # Finding negative numbers in the list
+            negative_numbers = [num for num in list_of_numbers if int(num) < 0]
+            if len(negative_numbers) > 0:
+                # Create the error message if negative numbers are found
+                neg_numbers = ','.join(negative_numbers)
+                Excep_message = "negative numbers not allowed: {0}".format(neg_numbers)
+                raise NegativeNumberException(Excep_message)  # Raise the custom exception
+                
+            # Add the numbers if no negative numbers
             for i in list_of_numbers:
                 sum_of_numbers += int(i)
         return sum_of_numbers
 
-    except NegativeNumberException as e:
+    except Exception as e:
         print(f"Exception in add_numbers: {e}")
         return 0  # Return 0 if exception is caught
 
